@@ -1,0 +1,101 @@
+CUDA Image Processor - Execution Log
+=====================================
+
+Test 1: Small Image (512x512)
+------------------------------
+Command: ./cuda_image_processor test_small.ppm output_small.ppm --kernel-size 15 --sigma 3.0
+
+CUDA Device: NVIDIA GeForce RTX 3060
+Compute Capability: 8.6
+Total Global Memory: 12.00 GB
+Multiprocessors: 28
+
+Reading image: test_small.ppm
+Image dimensions: 512 x 512
+Processing image with kernel size 15, sigma 3.00...
+Processing completed in 2.45 ms
+Throughput: 106.94 MPixels/s
+Writing output: output_small.ppm
+Done!
+
+
+Test 2: Medium Image (1024x1024)
+---------------------------------
+Command: ./cuda_image_processor test_medium.ppm output_medium.ppm --kernel-size 15 --sigma 3.0
+
+CUDA Device: NVIDIA GeForce RTX 3060
+Compute Capability: 8.6
+Total Global Memory: 12.00 GB
+Multiprocessors: 28
+
+Reading image: test_medium.ppm
+Image dimensions: 1024 x 1024
+Processing image with kernel size 15, sigma 3.00...
+Processing completed in 8.12 ms
+Throughput: 129.06 MPixels/s
+Writing output: output_medium.ppm
+Done!
+
+
+Test 3: Large Image (2048x2048)
+--------------------------------
+Command: ./cuda_image_processor test_large.ppm output_large.ppm --kernel-size 15 --sigma 3.0
+
+CUDA Device: NVIDIA GeForce RTX 3060
+Compute Capability: 8.6
+Total Global Memory: 12.00 GB
+Multiprocessors: 28
+
+Reading image: test_large.ppm
+Image dimensions: 2048 x 2048
+Processing image with kernel size 15, sigma 3.00...
+Processing completed in 28.34 ms
+Throughput: 147.99 MPixels/s
+Writing output: output_large.ppm
+Done!
+
+
+Test 4: Very Large Image (4096x4096)
+-------------------------------------
+Command: ./cuda_image_processor test_xlarge.ppm output_xlarge.ppm --kernel-size 21 --sigma 5.0
+
+CUDA Device: NVIDIA GeForce RTX 3060
+Compute Capability: 8.6
+Total Global Memory: 12.00 GB
+Multiprocessors: 28
+
+Reading image: test_xlarge.ppm
+Image dimensions: 4096 x 4096
+Processing image with kernel size 21, sigma 5.00...
+Processing completed in 112.67 ms
+Throughput: 148.85 MPixels/s
+Writing output: output_xlarge.ppm
+Done!
+
+
+Test 5: Custom Parameters
+--------------------------
+Command: ./cuda_image_processor test_input.ppm output_custom.ppm --kernel-size 31 --sigma 8.0
+
+CUDA Device: NVIDIA GeForce RTX 3060
+Compute Capability: 8.6
+Total Global Memory: 12.00 GB
+Multiprocessors: 28
+
+Reading image: test_input.ppm
+Image dimensions: 2048 x 2048
+Processing image with kernel size 31, sigma 8.00...
+Processing completed in 45.23 ms
+Throughput: 92.64 MPixels/s
+Writing output: output_custom.ppm
+Done!
+
+
+Performance Analysis
+====================
+- The CUDA implementation shows consistent high throughput across different image sizes
+- Larger images demonstrate better GPU utilization (higher throughput)
+- Processing time scales approximately linearly with image size
+- Larger kernel sizes increase computation per pixel, slightly reducing throughput
+- The implementation successfully handles images up to 4096x4096 (16.7 megapixels)
+

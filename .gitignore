@@ -1,0 +1,25 @@
+# Compiled binaries
+cuda_image_processor
+*.o
+*.exe
+
+# Build artifacts
+*.obj
+*.pdb
+
+# Test images (optional - you may want to include small test images)
+*.ppm
+*.jpg
+*.png
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
