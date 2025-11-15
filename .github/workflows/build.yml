@@ -1,0 +1,25 @@
+name: Build CUDA Project
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Check Makefile
+        run: |
+          if [ -f Makefile ]; then
+            echo "Makefile found"
+            cat Makefile
+          else
+            echo "No Makefile found"
+          fi
+
